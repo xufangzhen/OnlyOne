@@ -13,7 +13,7 @@
         android:scrollbars="none"
         />
 
-    <com.sideindexbar.SideIndexBar
+    <com.onlyone.common.widget.indexbar.SideIndexBar
         android:id="@+id/index_bar"
         android:layout_width="30dp"
         android:layout_height="match_parent"
@@ -22,10 +22,10 @@
         android:paddingTop="30dp"
         indexBar:isBoldface="true"
         indexBar:isLetterCenter="true"
-        indexBar:letterColor="@color/gray"
+        indexBar:letterColor="@color/gray_666666"
         indexBar:letterSize="15sp"
-        indexBar:selectBackground="@color/transparentBlack"
-        indexBar:selectLetterColor="@color/black"
+        indexBar:selectBackground="@color/transparent_60000000"
+        indexBar:selectLetterColor="@color/black_000000"
         />
 
     <TextView

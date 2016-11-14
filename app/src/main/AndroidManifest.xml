@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/WhiteNoActionBarTheme">
 
         <activity
             android:name=".module.main.SplashActivity"
@@ -24,6 +24,8 @@
 
         <activity android:name=".module.main.MainActivity"/>
         <activity android:name=".module.main.demo.FlowLayoutActivity"/>
+        <activity android:name=".module.main.demo.IndexBarActivity"/>
+        <activity android:name=".module.main.demo.DrawerLayoutActivity"/>
 
     </application>
 

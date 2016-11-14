@@ -12,7 +12,9 @@ import com.onlyone.R;
 import com.onlyone.common.base.BaseActivity;
 import com.onlyone.common.util.LogUtils;
 import com.onlyone.common.widget.flowlayout.JustifyFlowLayout;
+import com.onlyone.module.main.demo.DrawerLayoutActivity;
 import com.onlyone.module.main.demo.FlowLayoutActivity;
+import com.onlyone.module.main.demo.IndexBarActivity;
 
 import java.util.List;
 
@@ -52,6 +54,12 @@ public class MainActivity extends BaseActivity {
                 switch (position) {
                     case 0:
                         startActivity(new Intent(MainActivity.this, FlowLayoutActivity.class));
+                        break;
+                    case 1:
+                        startActivity(new Intent(MainActivity.this, IndexBarActivity.class));
+                        break;
+                    case 2:
+                        startActivity(new Intent(MainActivity.this, DrawerLayoutActivity.class));
                         break;
                 }
             }
