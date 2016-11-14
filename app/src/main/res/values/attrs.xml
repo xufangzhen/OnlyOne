@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="stl_SmartTabLayout">
+        <attr format="boolean" name="stl_indicatorAlwaysInCenter"/>
+        <attr format="boolean" name="stl_indicatorWithoutPadding"/>
+        <attr format="boolean" name="stl_indicatorInFront"/>
+        <attr format="enum" name="stl_indicatorInterpolation">
+            <enum name="smart" value="0"/>
+            <enum name="linear" value="1"/>
+        </attr>
+        <attr format="enum" name="stl_indicatorGravity">
+            <enum name="bottom" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="center" value="2"/>
+        </attr>
+        <attr format="color" name="stl_indicatorColor"/>
+        <attr format="reference" name="stl_indicatorColors"/>
+        <attr format="dimension" name="stl_indicatorThickness"/>
+        <attr format="dimension" name="stl_indicatorWidth">
+            <enum name="auto" value="-1"/>
+        </attr>
+        <attr format="dimension" name="stl_indicatorCornerRadius"/>
+        <attr format="color" name="stl_overlineColor"/>
+        <attr format="dimension" name="stl_overlineThickness"/>
+        <attr format="color" name="stl_underlineColor"/>
+        <attr format="dimension" name="stl_underlineThickness"/>
+        <attr format="color" name="stl_dividerColor"/>
+        <attr format="reference" name="stl_dividerColors"/>
+        <attr format="dimension" name="stl_dividerThickness"/>
+        <attr format="reference" name="stl_defaultTabBackground"/>
+        <attr format="boolean" name="stl_defaultTabTextAllCaps"/>
+        <attr format="color|reference" name="stl_defaultTabTextColor"/>
+        <attr format="dimension" name="stl_defaultTabTextSize"/>
+        <attr format="dimension" name="stl_defaultTabTextHorizontalPadding"/>
+        <attr format="dimension" name="stl_defaultTabTextMinWidth"/>
+        <attr format="reference" name="stl_customTabTextLayoutId"/>
+        <attr format="reference" name="stl_customTabTextViewId"/>
+        <attr format="boolean" name="stl_distributeEvenly"/>
+        <attr format="boolean" name="stl_clickable"/>
+        <attr format="dimension" name="stl_titleOffset">
+            <enum name="auto_center" value="-1"/>
+        </attr>
+        <attr format="boolean" name="stl_drawDecorationAfterTab"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="SideIndexBar">
+        <attr format="dimension" name="letterSize"/>
+        <attr format="color" name="letterColor"/>
+        <attr format="color" name="selectLetterColor"/>
+        <attr format="reference|color" name="selectBackground"/>
+        <attr format="boolean" name="isBoldface"/>
+        <attr format="boolean" name="isLetterCenter"/>
+    </declare-styleable>
+
+
+    <!-- superslim_LayoutManager的属性 -->
+    <declare-styleable name="superslim_LayoutManager">
+        <attr format="boolean" name="slm_isHeader"/>
+        <attr name="slm_headerDisplay">
+            <flag name="inline" value="0x01"/>
+            <flag name="start" value="0x02"/>
+            <flag name="end" value="0x04"/>
+            <flag name="overlay" value="0x08"/>
+            <flag name="sticky" value="0x10"/>
+        </attr>
+        <attr format="integer" name="slm_section_firstPosition"/>
+        <attr format="enum|string" name="slm_section_sectionManager">
+            <enum name="linear" value="0x01"/>
+            <enum name="grid" value="0x02"/>
+            <enum name="staggered_grid" value="0x03"/>
+        </attr>
+        <attr format="enum|dimension" name="slm_section_headerMarginStart">
+            <enum name="match_header" value="-1"/>
+        </attr>
+        <attr format="enum|dimension" name="slm_section_headerMarginEnd">
+            <enum name="match_header" value="-1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="superslim_GridSLM">
+        <attr format="dimension" name="slm_grid_columnWidth"/>
+        <attr format="enum|integer" name="slm_grid_numColumns">
+            <enum name="auto_fit" value="-1"/>
+        </attr>
+    </declare-styleable>
+</resources>

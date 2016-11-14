@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--透明-->
+    <color name="transparent_00ffffff">#00FFFFFF</color>
+    <color name="transparent_60000000">#66000000</color>
+    <!--红色-->
+    <color name="red_ff0000">#FF0000</color>
+    <color name="red_d22147">#D22147</color>
+    <color name="red_ff4081">#FF4081</color>
+    <color name="red_ff8587">#FF8587</color>
+    <!--白色-->
+    <color name="white_ffffff">#FFFFFF</color>
+
+    <!--灰色-->
+    <color name="gray_f0f0f0">#F0F0F0</color>
+    <!--蓝色-->
+    <color name="blue_5bc4ed">#5BC4ED</color>
+</resources>
