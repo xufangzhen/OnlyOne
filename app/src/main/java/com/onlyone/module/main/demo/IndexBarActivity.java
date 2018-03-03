@@ -22,7 +22,11 @@ public class IndexBarActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_index_bar);
+    }
+
+    @Override
+    public int getContentViewID() {
+        return R.layout.activity_index_bar;
     }
 
     @Override

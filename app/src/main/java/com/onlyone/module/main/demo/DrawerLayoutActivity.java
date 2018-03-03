@@ -25,9 +25,8 @@ public class DrawerLayoutActivity extends BaseActivity {
     private DrawerLayout mDrawerLayout;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drawer_layout);
+    public int getContentViewID() {
+        return R.layout.activity_drawer_layout;
     }
 
     @Override

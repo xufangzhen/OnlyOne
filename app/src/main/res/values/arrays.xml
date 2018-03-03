@@ -4,11 +4,11 @@
         <item> 流式局部demo </item>
         <item> 侧边字母索引条demo </item>
         <item> 泡泡菜单demo </item>
-        <item>新手引导浮层</item>
-        <item>SmartTabLayout</item>
-        <item>SuperSlim</item>
-        <item>贝塞尔曲线</item>
-        <item>贝塞尔曲线</item>
+        <item> 点击事件 </item>
+        <item> 新手引导浮层 </item>
+        <item> SmartTabLayout </item>
+        <item> SuperSlim </item>
+        <item> 贝塞尔曲线 </item>
     </string-array>
 
     <string-array name="index_bar_list">
