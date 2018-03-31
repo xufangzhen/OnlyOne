@@ -57,6 +57,7 @@ public class FrameLayout1 extends FrameLayout {
 
         }
         return super.onInterceptTouchEvent(ev);
+//        return true;
     }
 
     @Override
@@ -74,5 +75,6 @@ public class FrameLayout1 extends FrameLayout {
 
         }
         return super.onTouchEvent(event);
+//        return true;
     }
 }

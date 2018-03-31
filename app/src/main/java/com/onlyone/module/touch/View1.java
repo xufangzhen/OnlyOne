@@ -43,23 +43,29 @@ public class View1 extends View {
 
         }
         return super.dispatchTouchEvent(ev);
+//        return false;
     }
 
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        Thread.dumpStack();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.e("xfz", "View1: onTouchEvent ACTION_DOWN 未消费");
+                Log.e("xfz", "View1: onTouchEvent ACTION_DOWN 父view 拦截");
+
+                getParent().requestDisallowInterceptTouchEvent(true);
                 break;
+//                return true;
             case MotionEvent.ACTION_MOVE:
-                Log.e("xfz", "View1: onTouchEvent ACTION_MOVE 未消费");
+                Log.e("xfz", "View1: onTouchEvent ACTION_MOVE 父view 拦截");
                 break;
             case MotionEvent.ACTION_UP:
-                Log.e("xfz", "View1: onTouchEvent ACTION_UP 未消费");
+                Log.e("xfz", "View1: onTouchEvent ACTION_UP 父view 拦截");
                 break;
 
         }
         return super.onTouchEvent(event);
+//        return true;
     }
 }

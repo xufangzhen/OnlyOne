@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.onlyone">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".common.base.BaseApplication"
@@ -16,18 +16,44 @@
             android:name=".module.main.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".module.main.MainActivity"/>
-        <activity android:name=".module.main.demo.FlowLayoutActivity"/>
-        <activity android:name=".module.main.demo.IndexBarActivity"/>
-        <activity android:name=".module.main.demo.DrawerLayoutActivity"/>
-        <activity android:name=".module.touch.TouchEventActivity"/>
+        <activity android:name=".module.main.MainActivity" />
+        <activity android:name=".module.main.demo.FlowLayoutActivity" />
+        <activity android:name=".module.main.demo.IndexBarActivity" />
+        <activity android:name=".module.main.demo.DrawerLayoutActivity" />
+        <activity android:name=".module.touch.TouchEventActivity" />
+        <activity android:name=".module.measure.MeasureActivity" />
 
+
+        <activity android:name=".module.launch.ActivityA" />
+
+        <activity android:name=".module.launch.ActivityB">
+            <intent-filter>
+                <action android:name="activity2" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="myCategory" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".module.launch.ActivityC" >
+            <intent-filter>
+                <action android:name="activity2" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="myCategory" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".module.launch.ActivityD" >
+            <intent-filter>
+                <action android:name="activity2" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="myCategory" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.onlyone.module.touch;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.MotionEvent;
 
@@ -43,8 +45,9 @@ public class TouchEventActivity extends BaseActivity {
 
         }
         return super.dispatchTouchEvent(ev);
+//        return true;
     }
-    
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -60,6 +63,55 @@ public class TouchEventActivity extends BaseActivity {
                 break;
 
         }
-        return super.onTouchEvent(event);
+//        return super.onTouchEvent(event);
+        return true;
+    }
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.e("xfz", "onCreate");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("xfz", "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("xfz", "onResume");
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        Log.e("xfz", "onPostCreate");
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        Log.e("xfz", "onPostResume");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("xfz", "onStop");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("xfz", "onPause");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("xfz", "onDestroy");
     }
 }

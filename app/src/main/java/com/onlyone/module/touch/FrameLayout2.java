@@ -47,10 +47,12 @@ public class FrameLayout2 extends FrameLayout {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 Log.e("xfz", "FrameLayout2: onInterceptTouchEvent ACTION_DOWN");
+//                return true;
                 break;
             case MotionEvent.ACTION_MOVE:
                 Log.e("xfz", "FrameLayout2: onInterceptTouchEvent ACTION_MOVE");
                 break;
+//                return true;
             case MotionEvent.ACTION_UP:
                 Log.e("xfz", "FrameLayout2: onInterceptTouchEvent ACTION_UP");
                 break;
@@ -64,7 +66,8 @@ public class FrameLayout2 extends FrameLayout {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 Log.e("xfz", "FrameLayout2: onTouchEvent ACTION_DOWN");
-                break;
+                return true;
+//                break;
             case MotionEvent.ACTION_MOVE:
                 Log.e("xfz", "FrameLayout2: onTouchEvent ACTION_MOVE");
                 break;
