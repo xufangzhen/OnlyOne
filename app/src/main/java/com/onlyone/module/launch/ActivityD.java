@@ -21,7 +21,7 @@ public class ActivityD extends BaseActivity {
 
     @Override
     public void initView() {
-        mTvd =findViewById(R.id.text_d);
+        mTvd = (TextView) findViewById(R.id.text_d);
     }
 
     @Override

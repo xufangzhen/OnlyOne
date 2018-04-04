@@ -21,7 +21,7 @@ public class ActivityC extends BaseActivity {
 
     @Override
     public void initView() {
-        mTvc = findViewById(R.id.text_c);
+        mTvc = (TextView) findViewById(R.id.text_c);
     }
 
     @Override

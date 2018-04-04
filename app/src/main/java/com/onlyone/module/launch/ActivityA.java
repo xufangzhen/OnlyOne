@@ -22,7 +22,7 @@ public class ActivityA extends BaseActivity {
 
     @Override
     public void initView() {
-        mTva =findViewById(R.id.text_a);
+        mTva = (TextView) findViewById(R.id.text_a);
     }
 
     @Override
