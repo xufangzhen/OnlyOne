@@ -23,6 +23,7 @@ public class ActivityA extends BaseActivity {
     @Override
     public void initView() {
         mTva = (TextView) findViewById(R.id.text_a);
+
     }
 
     @Override
