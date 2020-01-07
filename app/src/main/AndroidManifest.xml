@@ -3,6 +3,8 @@
     package="com.onlyone">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".common.base.BaseApplication"
@@ -11,6 +13,18 @@
         android:label="@string/app_name"
         android:supportsRtl="false"
         android:theme="@style/WhiteNoActionBarTheme">
+
+        <service
+            android:name=".service.SimpleAidlService"
+            android:enabled="true"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="com.onlyone.service.SimpleAidlService" />
+            </intent-filter>
+
+        </service>
+
 
         <activity
             android:name=".module.main.SplashActivity"
@@ -29,27 +43,35 @@
         <activity android:name=".module.touch.TouchEventActivity" />
         <activity android:name=".module.measure.MeasureActivity" />
 
+        <activity android:name=".lifecycle.LifeActivity1" />
+        <activity android:name=".lifecycle.LifeActivity2" />
+        <activity android:name=".lifecycle.LifeActivity3" />
+        <activity android:name=".lifecycle.LifeActivity4" />
+
 
         <activity android:name=".module.launch.ActivityA" />
 
         <activity android:name=".module.launch.ActivityB">
             <intent-filter>
                 <action android:name="activity2" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="myCategory" />
             </intent-filter>
         </activity>
-        <activity android:name=".module.launch.ActivityC" >
+        <activity android:name=".module.launch.ActivityC">
             <intent-filter>
                 <action android:name="activity2" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="myCategory" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".module.launch.ActivityD" >
+        <activity android:name=".module.launch.ActivityD">
             <intent-filter>
                 <action android:name="activity2" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="myCategory" />
             </intent-filter>
