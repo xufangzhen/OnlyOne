@@ -32,4 +32,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'org.greenrobot:eventbus:3.0.0'
     implementation 'com.facebook.fresco:fresco:2.0.0'
+
+    api 'com.aliyun.sdk.android:AliyunPlayer:4.7.3-full'
+    api 'com.alivc.conan:AlivcConan:0.9.5'
 }

@@ -1,12 +1,12 @@
 package com.onlyone.module.main;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.google.android.exoplayer2.video.VideoListener;
 import com.onlyone.R;
 import com.onlyone.algorithm.singlelink.Entity;
 import com.onlyone.algorithm.singlelink.SingleLinkedList;
@@ -20,18 +20,11 @@ import com.onlyone.module.main.demo.IndexBarActivity;
 import com.onlyone.module.measure.MeasureActivity;
 import com.onlyone.module.touch.TouchEventActivity;
 
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 /**
  * mainActivity
@@ -40,9 +33,49 @@ public class MainActivity extends BaseActivity {
 
     private ListView mListView;
 
+
     @Override
     protected void onStart() {
         super.onStart();
+        int N = 10;
+//        for (int i = 0; i < N; i++) {
+//            new IAsyncTask().execute();
+//        }
+
+
+        AsyncTask asyncTask = new AsyncTask() {
+            @Override
+            protected Object doInBackground(Object[] objects) {
+
+                Log.e("xfz", "doInBackground mListView == null");
+                try {
+                    Thread.currentThread().sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Object o) {
+                super.onPostExecute(o);
+                if (mListView == null) {
+                    Log.e("xfz", "mListView == null");
+                } else {
+                    Log.e("xfz", "mListView != null");
+                }
+            }
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+
+            }
+        };
+
+        asyncTask.execute();
+
     }
 
     @Override
@@ -56,11 +89,11 @@ public class MainActivity extends BaseActivity {
     public void initView() {
         mListView = (ListView) findViewById(R.id.main_list_view);
 
-        OkHttpClient okHttpClient = new OkHttpClient();
-
-        Request request = new Request().body().
-
-        okHttpClient.newCall(request.e)
+//        OkHttpClient okHttpClient = new OkHttpClient();
+//
+//        Request request = new Request().body().
+//
+//        okHttpClient.newCall(request.e)
 
 
     }
@@ -115,10 +148,6 @@ public class MainActivity extends BaseActivity {
 
 
         //okhttp
-
-
-
-
 
 
         String s1 = "ab";
@@ -179,4 +208,23 @@ public class MainActivity extends BaseActivity {
 
 
     }
+
+
+    class IAsyncTask extends AsyncTask<String, Integer, String> {
+        protected String doInBackground(String... args1) {
+
+            try {
+                int times = 4;
+
+                Log.i("doInBackground", "currentThread = " + Thread.currentThread().getName()); //这个doInBackground就打印一个Log，然后sleep 20 毫秒
+                Thread.sleep(20);
+
+            } catch (Exception e) {
+
+            }
+            return "over";
+        }
+    }
+
+
 }

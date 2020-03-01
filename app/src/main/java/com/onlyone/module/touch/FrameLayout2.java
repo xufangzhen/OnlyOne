@@ -30,7 +30,7 @@ public class FrameLayout2 extends FrameLayout {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 Log.e("xfz", "FrameLayout2: dispatchTouchEvent ACTION_DOWN");
-                break;
+                return false;
             case MotionEvent.ACTION_MOVE:
                 Log.e("xfz", "FrameLayout2: dispatchTouchEvent ACTION_MOVE");
                 break;

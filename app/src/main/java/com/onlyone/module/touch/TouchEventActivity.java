@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.MotionEvent;
 
+import com.aliyun.player.AliPlayer;
 import com.onlyone.R;
 import com.onlyone.common.base.BaseActivity;
 
@@ -24,6 +25,7 @@ public class TouchEventActivity extends BaseActivity {
 
     }
 
+    private AliPlayer mAliyunVodPlayer;
     @Override
     public void initData() {
 
@@ -38,6 +40,7 @@ public class TouchEventActivity extends BaseActivity {
                 break;
             case MotionEvent.ACTION_MOVE:
                 Log.e("xfz", "activity: dispatchTouchEvent ACTION_MOVE");
+//                return true;
                 break;
             case MotionEvent.ACTION_UP:
                 Log.e("xfz", "activity: dispatchTouchEvent ACTION_UP");
@@ -65,6 +68,12 @@ public class TouchEventActivity extends BaseActivity {
         }
 //        return super.onTouchEvent(event);
         return true;
+    }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+        Log.e("xfz", "activity: onUserInteraction");
     }
 
     @Override

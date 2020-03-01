@@ -41,7 +41,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                finish();
+//                finish();
             }
         });
     }
