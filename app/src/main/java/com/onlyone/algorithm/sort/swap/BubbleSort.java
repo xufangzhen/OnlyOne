@@ -27,3 +27,24 @@ public class BubbleSort {
 
 
 }
+
+
+
+ /*   //冒泡
+    private void sort(int[] data){
+        if(data == null || data.length < 1){
+            return;
+        }
+        boolean needSort;
+        for(int i=1,len = data.length;i<length && needSort; i++){
+            needSort = false;
+            for(int j=0; j< len - i; j++){
+                if(data[j] > date[j+1]){
+                    data[j] = data[j] ^ date[j + 1];
+                    data[j + 1] = data[j] ^ date[j + 1];
+                    data[j] = data[j] ^ date[j + 1];
+                    needSort = true;
+                }
+            }
+        }
+    }*/

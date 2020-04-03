@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.MotionEvent;
 
-import com.aliyun.player.AliPlayer;
 import com.onlyone.R;
 import com.onlyone.common.base.BaseActivity;
 
@@ -25,7 +24,6 @@ public class TouchEventActivity extends BaseActivity {
 
     }
 
-    private AliPlayer mAliyunVodPlayer;
     @Override
     public void initData() {
 

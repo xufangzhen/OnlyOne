@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 
 import com.onlyone.common.util.LogUtils;
+import com.onlyone.plugin.init.OnlyOneFlutterInitial;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +35,14 @@ public class BaseApplication extends Application {
                 LogUtils.d("切换到后台");
             }
         });
+
+        OnlyOneFlutterInitial.initBoost(this);
     }
 
     public static BaseApplication getInstance() {
-        if (mApplication == null) throw new NullPointerException("app not create or be terminated!");
+        if (mApplication == null) {
+            throw new NullPointerException("app not create or be terminated!");
+        }
         return mApplication;
     }
 

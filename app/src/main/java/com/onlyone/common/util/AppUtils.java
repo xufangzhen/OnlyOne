@@ -1,8 +1,13 @@
 package com.onlyone.common.util;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.onlyone.common.base.BaseApplication;
+
+import java.lang.reflect.Field;
+
+import dalvik.system.DexClassLoader;
 
 /**
  * 创建者：许方镇
@@ -24,6 +29,16 @@ public class AppUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        Log.e("xfz", "AppUtilsClassLoader = " + String.class.getClassLoader().toString());
+
+        DexClassLoader dexClassLoader;
+
+        Field field;
+
         return visionCode;
+
+
+
     }
 }

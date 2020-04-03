@@ -37,4 +37,19 @@ public class TreeNode {
 
     }
 
+    private void sort(int[] data) {
+        if (data == null || data.length < 1) {
+            return;
+        }
+        for (int i = 0, length = data.length; i < length; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (data[i] < data[j]) {
+                    data[i] = data[i] ^ data[j];
+                    data[j] = data[i] ^ data[j];
+                    data[i] = data[i] ^ data[j];
+                }
+            }
+        }
+    }
+
 }

@@ -2,15 +2,22 @@ package com.onlyone.module.main;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.onlyone.R;
+import com.onlyone.algorithm.leecode.Zconvert;
 import com.onlyone.algorithm.singlelink.Entity;
 import com.onlyone.algorithm.singlelink.SingleLinkedList;
-import com.onlyone.algorithm.sort.HeapSort;
+import com.onlyone.algorithm.sort.insert.InsertSort;
+import com.onlyone.algorithm.test.StringDemo;
+import com.onlyone.algorithm.tree.TreeNode;
+import com.onlyone.algorithm.tree.TreeTraverse;
 import com.onlyone.common.base.BaseActivity;
 import com.onlyone.common.util.DexUtils;
 import com.onlyone.lifecycle.LifeActivity1;
@@ -19,12 +26,16 @@ import com.onlyone.module.main.demo.FlowLayoutActivity;
 import com.onlyone.module.main.demo.IndexBarActivity;
 import com.onlyone.module.measure.MeasureActivity;
 import com.onlyone.module.touch.TouchEventActivity;
+import com.onlyone.plugin.container.OnlyFlutterActivity;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * mainActivity
@@ -37,44 +48,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        int N = 10;
-//        for (int i = 0; i < N; i++) {
-//            new IAsyncTask().execute();
-//        }
-
-
-        AsyncTask asyncTask = new AsyncTask() {
-            @Override
-            protected Object doInBackground(Object[] objects) {
-
-                Log.e("xfz", "doInBackground mListView == null");
-                try {
-                    Thread.currentThread().sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(Object o) {
-                super.onPostExecute(o);
-                if (mListView == null) {
-                    Log.e("xfz", "mListView == null");
-                } else {
-                    Log.e("xfz", "mListView != null");
-                }
-            }
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-
-
-            }
-        };
-
-        asyncTask.execute();
 
     }
 
@@ -98,11 +71,27 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    private static void out(Object[] data) {
+        System.out.println(Arrays.toString(data));
+    }
+
     @Override
     public void initData() {
 
+        List<? extends View> Views = new ArrayList<>();
+
+        String s = "我和你心连心";
+        Log.e("Zconvert", new Zconvert().convert2("PAYPALISHIRING", 3));
+
+
+        new StringDemo().print();
+
+        TreeTraverse.traverse5(TreeNode.buildTree());
+
+
         Entity entity1 = new Entity("张一", 31);
         Entity entity2 = new Entity("张二", 32);
+
         Entity entity3 = new Entity("张三", 33);
         Entity entity4 = new Entity("张四", 34);
         Entity entity5 = new Entity("张五", 35);
@@ -126,9 +115,14 @@ public class MainActivity extends BaseActivity {
         Log.e("singleLinkedList", "traverse = " + singleLinkedList.traverse());
 
         //堆排序
-        int[] keys = {81, 49, 19, 38, 97, 76, 13, 19};
-        HeapSort.sort(keys);
-        Log.e("Main HeapSort", Arrays.toString(keys));
+        int[] keys = {81, 49, 19, 38, 97, 76, 13};
+
+
+//        HeapSort.sort(keys);
+//
+//
+        InsertSort.sort(keys);
+        Log.e("BubbleSort", Arrays.toString(keys));
 
         //LinkedHashMap
         LinkedHashMap<Integer, String> map = new LinkedHashMap<>(0, 0.75f, true);
@@ -200,6 +194,11 @@ public class MainActivity extends BaseActivity {
                     case 5:
                         startActivity(new Intent(MainActivity.this, LifeActivity1.class));
                         break;
+                    case 6:
+                        JSONObject jsonObject = new JSONObject();
+                        jsonObject.put("oneThing", "video");
+                        OnlyFlutterActivity.launch(MainActivity.this, "onePage", jsonObject, 10);
+                        break;
                     default:
                         break;
                 }
@@ -210,6 +209,7 @@ public class MainActivity extends BaseActivity {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     class IAsyncTask extends AsyncTask<String, Integer, String> {
         protected String doInBackground(String... args1) {
 
@@ -226,5 +226,32 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+
+    public static void main(String[] args) {
+        //Scanner in = new Scanner(System.in);
+        //int a = in.nextInt();
+        //System.out.println(a);
+        System.out.println("Hello World!");
+
+        Scanner in = new Scanner(System.in);
+        List<Integer> inList = new ArrayList();
+        while (in.hasNext()) {
+            inList.add(in.nextInt());
+        }
+        out((Integer[]) inList.toArray());
+    }
+
+    private static void out(Integer[] data) {
+        int min = data[0];
+        for (int i = 1; i < data.length; i++) {
+            if (min > data[i]) {
+                min = data[i];
+            }
+        }
+
+        System.out.println(String.valueOf(min));
+
+
+    }
 
 }

@@ -1,15 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.2'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.onlyone"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        ndk {
+            // Filter for architectures supported by Flutter.
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
     }
     buildTypes {
         release {
@@ -27,12 +31,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation "com.android.support:recyclerview-v7:27.1.1"
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation "com.android.support:recyclerview-v7:28.0.0"
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'org.greenrobot:eventbus:3.0.0'
     implementation 'com.facebook.fresco:fresco:2.0.0'
 
-    api 'com.aliyun.sdk.android:AliyunPlayer:4.7.3-full'
-    api 'com.alivc.conan:AlivcConan:0.9.5'
+    implementation 'com.alibaba:fastjson:1.1.71.android'
+
+    implementation project(path: ':flutter')
+    implementation project(path: ':only_one_flutter_plugin')
 }
