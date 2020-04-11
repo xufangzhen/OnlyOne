@@ -102,6 +102,7 @@ public class TreeTraverse {
             traverse5(node.leftTreeNode);
         }
         Log.e("TreeTraverse", "value = " + node.value);
+
         if (node.rightTreeNode != null) {
             traverse5(node.rightTreeNode);
         }

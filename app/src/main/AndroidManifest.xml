@@ -36,6 +36,7 @@
         </activity>
 
         <activity android:name=".module.main.MainActivity" />
+        <activity android:name=".module.leak.LeakActivity" />
         <activity android:name=".module.main.demo.FlowLayoutActivity" />
         <activity android:name=".module.main.demo.IndexBarActivity" />
         <activity android:name=".module.main.demo.DrawerLayoutActivity" />

@@ -3,6 +3,7 @@ package com.onlyone.module.main;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.ListView;
 
 import com.alibaba.fastjson.JSONObject;
 import com.onlyone.R;
-import com.onlyone.algorithm.leecode.Zconvert;
+import com.onlyone.algorithm.find.FinderDemo;
 import com.onlyone.algorithm.singlelink.Entity;
 import com.onlyone.algorithm.singlelink.SingleLinkedList;
 import com.onlyone.algorithm.sort.insert.InsertSort;
@@ -21,6 +22,7 @@ import com.onlyone.algorithm.tree.TreeTraverse;
 import com.onlyone.common.base.BaseActivity;
 import com.onlyone.common.util.DexUtils;
 import com.onlyone.lifecycle.LifeActivity1;
+import com.onlyone.module.leak.LeakActivity;
 import com.onlyone.module.main.demo.DrawerLayoutActivity;
 import com.onlyone.module.main.demo.FlowLayoutActivity;
 import com.onlyone.module.main.demo.IndexBarActivity;
@@ -43,7 +45,6 @@ import java.util.Scanner;
 public class MainActivity extends BaseActivity {
 
     private ListView mListView;
-
 
     @Override
     protected void onStart() {
@@ -75,13 +76,15 @@ public class MainActivity extends BaseActivity {
         System.out.println(Arrays.toString(data));
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void initData() {
 
         List<? extends View> Views = new ArrayList<>();
 
         String s = "我和你心连心";
-        Log.e("Zconvert", new Zconvert().convert2("PAYPALISHIRING", 3));
+
+        int[][] nums = new int[][]{{2, 6}, {1, 3}, {15, 18}, {8, 10}};
 
 
         new StringDemo().print();
@@ -115,8 +118,9 @@ public class MainActivity extends BaseActivity {
         Log.e("singleLinkedList", "traverse = " + singleLinkedList.traverse());
 
         //堆排序
-        int[] keys = {81, 49, 19, 38, 97, 76, 13};
+        int[] keys = {8, 9, 19, 19, 38, 57, 76, 93};
 
+        Log.e("FinderDemo", FinderDemo.getIndexByK(keys, 19) + "");
 
 //        HeapSort.sort(keys);
 //
@@ -198,6 +202,8 @@ public class MainActivity extends BaseActivity {
                         JSONObject jsonObject = new JSONObject();
                         jsonObject.put("oneThing", "video");
                         OnlyFlutterActivity.launch(MainActivity.this, "onePage", jsonObject, 10);
+                    case 7:
+                        startActivity(new Intent(MainActivity.this, LeakActivity.class));
                         break;
                     default:
                         break;
@@ -205,6 +211,13 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Log.e("xfz", "postDelayed ");
+            }
+        }, 5000);
 
     }
 

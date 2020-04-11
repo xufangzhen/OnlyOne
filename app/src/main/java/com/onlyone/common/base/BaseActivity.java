@@ -1,10 +1,13 @@
 package com.onlyone.common.base;
 
+import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.AttributeSet;
+import android.view.View;
 
 /**
  * 创建者：许方镇
@@ -22,6 +25,11 @@ public abstract class BaseActivity extends AppCompatActivity {
             BaseApplication.getRunningActivityList().add(this);
         }
         setContentView(getContentViewID());
+    }
+
+    @Override
+    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+        return super.onCreateView(parent, name, context, attrs);
     }
 
     @Override
