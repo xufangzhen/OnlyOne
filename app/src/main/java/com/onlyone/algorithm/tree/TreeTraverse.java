@@ -19,12 +19,12 @@ public class TreeTraverse {
 
         while (!nodeList.isEmpty()) {
             TreeNode popNode = nodeList.pop();
-            Log.e("TreeTraverse", "value = " + popNode.value);
-            if (popNode.leftTreeNode != null) {
-                nodeList.push(popNode.leftTreeNode);
+            Log.e("TreeTraverse", "value = " + popNode.val);
+            if (popNode.left != null) {
+                nodeList.push(popNode.left);
             }
-            if (popNode.rightTreeNode != null) {
-                nodeList.push(popNode.rightTreeNode);
+            if (popNode.right != null) {
+                nodeList.push(popNode.right);
             }
         }
     }
@@ -40,12 +40,12 @@ public class TreeTraverse {
 
         while (!nodeList.isEmpty()) {
             TreeNode popNode = nodeList.poll();
-            Log.e("TreeTraverse", "value = " + popNode.value);
-            if (popNode.leftTreeNode != null) {
-                nodeList.offer(popNode.leftTreeNode);
+            Log.e("TreeTraverse", "value = " + popNode.val);
+            if (popNode.left != null) {
+                nodeList.offer(popNode.left);
             }
-            if (popNode.rightTreeNode != null) {
-                nodeList.offer(popNode.rightTreeNode);
+            if (popNode.right != null) {
+                nodeList.offer(popNode.right);
             }
         }
     }
@@ -66,11 +66,11 @@ public class TreeTraverse {
 
             for (int i = 0; i < size; i++) {
                 TreeNode popNode = nodeList.poll();
-                if (popNode.leftTreeNode != null) {
-                    nodeList.offer(popNode.leftTreeNode);
+                if (popNode.left != null) {
+                    nodeList.offer(popNode.left);
                 }
-                if (popNode.rightTreeNode != null) {
-                    nodeList.offer(popNode.rightTreeNode);
+                if (popNode.right != null) {
+                    nodeList.offer(popNode.right);
                 }
             }
         }
@@ -83,43 +83,43 @@ public class TreeTraverse {
         if (node == null) {
             return;
         }
-        Log.e("TreeTraverse", "value = " + node.value);
-        if (node.leftTreeNode != null) {
-            traverse4(node.leftTreeNode);
+        Log.e("TreeTraverse", "value = " + node.val);
+        if (node.left != null) {
+            traverse4(node.left);
         }
-        if (node.rightTreeNode != null) {
-            traverse4(node.rightTreeNode);
+        if (node.right != null) {
+            traverse4(node.right);
         }
     }
 
-
-    //递归、先序
+    //递归、中序
     public static void traverse5(TreeNode node) {
         if (node == null) {
             return;
         }
-        if (node.leftTreeNode != null) {
-            traverse5(node.leftTreeNode);
+        if (node.left != null) {
+            traverse5(node.left);
         }
-        Log.e("TreeTraverse", "value = " + node.value);
+        Log.e("TreeTraverse", "value = " + node.val);
 
-        if (node.rightTreeNode != null) {
-            traverse5(node.rightTreeNode);
+        if (node.right != null) {
+            traverse5(node.right);
         }
     }
 
-    //递归、先序
+    //递归、后序
     public static void traverse6(TreeNode node) {
         if (node == null) {
             return;
         }
-        if (node.leftTreeNode != null) {
-            traverse6(node.leftTreeNode);
+        if (node.left != null) {
+            traverse6(node.left);
         }
-        if (node.rightTreeNode != null) {
-            traverse6(node.rightTreeNode);
+        if (node.right != null) {
+            traverse6(node.right);
         }
-        Log.e("TreeTraverse", "value = " + node.value);
+        Log.e("TreeTraverse", "value = " + node.val);
     }
+
 
 }

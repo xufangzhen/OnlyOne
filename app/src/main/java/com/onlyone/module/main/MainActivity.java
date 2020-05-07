@@ -1,5 +1,7 @@
 package com.onlyone.module.main;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -12,12 +14,15 @@ import android.widget.ListView;
 
 import com.alibaba.fastjson.JSONObject;
 import com.onlyone.R;
-import com.onlyone.algorithm.find.FinderDemo;
+import com.onlyone.algorithm.search.HeapSearch;
 import com.onlyone.algorithm.singlelink.Entity;
 import com.onlyone.algorithm.singlelink.SingleLinkedList;
 import com.onlyone.algorithm.sort.insert.InsertSort;
+import com.onlyone.algorithm.sort.select.HeapSort;
 import com.onlyone.algorithm.test.StringDemo;
+import com.onlyone.algorithm.tree.Solution;
 import com.onlyone.algorithm.tree.TreeNode;
+import com.onlyone.algorithm.tree.TreePathSum;
 import com.onlyone.algorithm.tree.TreeTraverse;
 import com.onlyone.common.base.BaseActivity;
 import com.onlyone.common.util.DexUtils;
@@ -80,9 +85,26 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initData() {
 
+        ObjectAnimator.ofFloat(mListView, "translationX", 500).setDuration(5000).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+
+            }
+        });
+
+
+
         List<? extends View> Views = new ArrayList<>();
 
+
         String s = "我和你心连心";
+
+        Log.e("xfz", "isPalindrome = " );
+
+
+
+        new Solution().sortList(Solution.ListNode.build());
+
 
         int[][] nums = new int[][]{{2, 6}, {1, 3}, {15, 18}, {8, 10}};
 
@@ -91,6 +113,8 @@ public class MainActivity extends BaseActivity {
 
         TreeTraverse.traverse5(TreeNode.buildTree());
 
+
+        List ass = new ArrayList(10);
 
         Entity entity1 = new Entity("张一", 31);
         Entity entity2 = new Entity("张二", 32);
@@ -118,15 +142,15 @@ public class MainActivity extends BaseActivity {
         Log.e("singleLinkedList", "traverse = " + singleLinkedList.traverse());
 
         //堆排序
-        int[] keys = {8, 9, 19, 19, 38, 57, 76, 93};
+        int[] keys = {8, 9, 38, 19, 1,2,19, 57, 76, 93};
 
-        Log.e("FinderDemo", FinderDemo.getIndexByK(keys, 19) + "");
+        Log.e("HeapDemo", HeapSearch.searchK(keys, 5) + "");
 
-//        HeapSort.sort(keys);
+        HeapSort.sort(keys);
 //
 //
-        InsertSort.sort(keys);
-        Log.e("BubbleSort", Arrays.toString(keys));
+//        InsertSort.sort(keys);
+        Log.e("HeapSort", Arrays.toString(keys));
 
         //LinkedHashMap
         LinkedHashMap<Integer, String> map = new LinkedHashMap<>(0, 0.75f, true);
