@@ -18,6 +18,7 @@ import com.onlyone.algorithm.search.HeapSearch;
 import com.onlyone.algorithm.singlelink.Entity;
 import com.onlyone.algorithm.singlelink.SingleLinkedList;
 import com.onlyone.algorithm.sort.insert.InsertSort;
+import com.onlyone.algorithm.sort.merge.MergeSort;
 import com.onlyone.algorithm.sort.select.HeapSort;
 import com.onlyone.algorithm.test.StringDemo;
 import com.onlyone.algorithm.tree.Solution;
@@ -142,15 +143,15 @@ public class MainActivity extends BaseActivity {
         Log.e("singleLinkedList", "traverse = " + singleLinkedList.traverse());
 
         //堆排序
-        int[] keys = {8, 9, 38, 19, 1,2,19, 57, 76, 93};
+        int[] keys = {8, 9, 38, 5,20,19, 1,2,19, 57, 76, 93};
 
         Log.e("HeapDemo", HeapSearch.searchK(keys, 5) + "");
 
-        HeapSort.sort(keys);
+        MergeSort.sort(keys);
 //
 //
 //        InsertSort.sort(keys);
-        Log.e("HeapSort", Arrays.toString(keys));
+        Log.e("MergeSort", Arrays.toString(keys));
 
         //LinkedHashMap
         LinkedHashMap<Integer, String> map = new LinkedHashMap<>(0, 0.75f, true);

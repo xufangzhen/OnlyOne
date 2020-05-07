@@ -6,7 +6,7 @@ package com.onlyone.algorithm.sort.merge;
 
 public class MergeSort {
 
-    public void sort(int[] data) {
+    public static void sort(int[] data) {
         int low = 0;
         int high = data.length - 1;
         merge(data, low, high);
@@ -14,7 +14,7 @@ public class MergeSort {
 
     }
 
-    public void merge(int[] data, int low, int high) {
+    public static void merge(int[] data, int low, int high) {
 
         if (low < high) {
             int mid = (low + high) / 2;
@@ -27,17 +27,17 @@ public class MergeSort {
         }
     }
 
-    public void mergeSort(int[] data, int low, int high) {
+    public static void mergeSort(int[] data, int low, int high) {
 
         int temp[] = new int[data.length];
 
-        int mid = low + (high - low) / 2 + 1;
+        int mid = low + (high - low) / 2 ;
         int curIndex = low;
 
         int startIndex1 = low;
-        int startIndex2 = mid;
+        int startIndex2 = mid+ 1;
 
-        while (startIndex1 < mid && startIndex2 <= high) {
+        while (startIndex1 <= mid && startIndex2 <= high) {
             if (data[startIndex1] < data[startIndex2]) {
                 temp[curIndex++] = data[startIndex1++];
             } else {
@@ -46,7 +46,7 @@ public class MergeSort {
         }
 
         //如果前部分还有剩余
-        while (startIndex1 < startIndex2) {
+        while (startIndex1 <= mid) {
             temp[curIndex++] = data[startIndex1++];
         }
 
@@ -59,7 +59,6 @@ public class MergeSort {
         for (int k = low; k <= high; k++) {
             data[k] = temp[k];
         }
-
 
     }
 
